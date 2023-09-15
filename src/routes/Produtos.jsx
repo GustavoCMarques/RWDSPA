@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import {GrFormEdit as Editar} from "react-icons/gr";
 import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
+import style from "./Produtos.modules.css";
 
 export default function Produtos() {
   document.title = "Produtos";
@@ -29,11 +30,11 @@ export default function Produtos() {
         {
           ListaProdutos.map((item,indice)=>(
             <tr key={indice}>
-                <td style={estiloDasCelulas}>{item.id}</td>
-                <td style={estiloDasCelulas}>{item.nome}</td>
-                <td style={estiloDasCelulas}>{item.desc}</td>
-                <td style={estiloDasCelulas}>{item.valor}</td>
-                <td style={estiloDasCelulas}> <Link to={`/editar/produtos/${item.id}`}><Editar/></Link> | <Link to={`/excluir/produtos/${item.id}`}><Excluir/></Link> </td>
+                <td>{item.id}</td>
+                <td>{item.nome}</td>
+                <td>{item.desc}</td>
+                <td>{item.valor}</td>
+                <td> <Link to={`/editar/produtos/${item.id}`}><Editar/></Link> | <Link to={`/excluir/produtos/${item.id}`}><Excluir/></Link> </td>
             </tr>
           ))
         }
